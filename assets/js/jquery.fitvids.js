@@ -79,9 +79,9 @@
       });
     });
   };
-  
+
   // Internal counter for unique video names.
   $.fn.fitVids._count = 0;
-  
+
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );

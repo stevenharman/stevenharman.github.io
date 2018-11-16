@@ -28,20 +28,20 @@ Right now (as of Ruby 2.5), I think that means doing one of the following:
 
 #### `Enumerable#map`
 
-Here we se an initial value, and re-assign it in each iteration.
+Here we set an initial value, and re-assign it in each iteration.
 
-    ``` ruby
-    snap = Snapshot.new
-    (1..10).map { |i| snap = snap.apply(i) }
-    ```
+``` ruby
+snap = Snapshot.new
+(1..10).map { |i| snap = snap.apply(i) }
+```
 
 #### `Enumerble#inject`
 
 In this case we use an awkward initial setup (pre-calculating the first iteration), and juggle the real value in the block.
 
-    ``` ruby
-    (2..10).inject([Snapshot.new(1)]) { |snaps, i| snaps.push(snaps.last.apply(i)) }
-    ```
+``` ruby
+(2..10).inject([Snapshot.new(1)]) { |snaps, i| snaps.push(snaps.last.apply(i)) }
+```
 
 Both options product the following:
 
