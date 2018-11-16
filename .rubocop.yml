@@ -1,0 +1,49 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 2.5
+
+Bundler/OrderedGems:
+  Enabled: false
+
+# Hack: Don't want Style/IfUnlessModifier rewriting if/else to modifiers longer than 80 characters
+# See: https://github.com/rubocop-hq/rubocop/issues/6149
+Metrics/LineLength:
+  Max: 80
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - '**/*.rb'
+    - 'lib/tasks/**/*.rake'
+
+Naming/UncommunicativeMethodParamName:
+  AllowedNames:
+    - 'db'
+    - 'id'
+    - 'io'
+    - 'to'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+Style/ClassCheck:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/SignalException:
+  EnforcedStyle: semantic
