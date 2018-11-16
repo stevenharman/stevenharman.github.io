@@ -248,9 +248,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed (~> 0.6)
-  jekyll-paginate (~> 1.1.0)
-  jekyll-redirect-from (~> 0.14.0)
 
 RUBY VERSION
    ruby 2.5.3p105

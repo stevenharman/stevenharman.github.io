@@ -1,5 +1,6 @@
 # General Settings
 name: Steven Harman
+title: Steven Harman
 job_title: Maker & Breaker of Things
 email: steven@harmanly.com
 description: Designer and developer of software. Believes the pursuit of beauty yields simplicity. Creator and consumer of open source software. Good at naps!
@@ -8,6 +9,7 @@ favicon: /favicon.ico
 twitter_handler: stevenharman
 analytics_code: UA-625384-1
 disqus: stevenharman
+github_username: stevenharman
 
 # Social Accounts
 social_networks:
@@ -45,6 +47,14 @@ show_rss: 1
 show_comments: 1
 show_menu: 0
 fixed_sidebar: 1
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-avatar
 
 # Defaults
 defaults:
