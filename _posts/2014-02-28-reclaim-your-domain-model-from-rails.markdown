@@ -3,7 +3,7 @@ layout: post
 title: "Reclaim Your Domain Model from Rails"
 date: 2014-02-28 14:51:47 -0500
 comments: true
-categories:
+tags: [ruby, rails, design]
 ---
 
 **TL,DR;** When building an application using Rails, I prefer to keep all my

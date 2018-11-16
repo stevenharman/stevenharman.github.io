@@ -3,7 +3,7 @@ layout: post
 title: "In Search Of... Enumerable#transform for Ruby"
 date: 2018-11-16 10:56:01 -0500
 comments: true
-categories:
+tags: [ruby]
 ---
 
 **In Search Of…** a Ruby method that mixes the semantics of `Enumerable#map` and `Enumerable#inject` to transform values, while also having access to the prior iteration return value.
@@ -11,7 +11,7 @@ Sounds odd, I know.
 
 Given the following "value object"
 
-```
+``` ruby
 class Snapshot
   def initialize(value = 0)
     @value = value
@@ -26,22 +26,26 @@ end
 I want to build an array of snapshots, based on some set of inputs.
 Right now (as of Ruby 2.5), I think that means doing one of the following:
 
-* A) Use an initial value, and re-assign it in each iteration
+#### `Enumerable#map`
 
-    ```
+Here we se an initial value, and re-assign it in each iteration.
+
+    ``` ruby
     snap = Snapshot.new
     (1..10).map { |i| snap = snap.apply(i) }
     ```
 
-* B) Use an awkward initial setup (pre-calculating the first iteration), and juggle the real value in the block
+#### `Enumerble#inject`
 
-    ```
+In this case we use an awkward initial setup (pre-calculating the first iteration), and juggle the real value in the block.
+
+    ``` ruby
     (2..10).inject([Snapshot.new(1)]) { |snaps, i| snaps.push(snaps.last.apply(i)) }
     ```
 
-Either of the options product the following:
+Both options product the following:
 
-```
+``` irb
 #=> [#<Snapshot:0x00007fe550d12558 @value=1>,
 #=>  #<Snapshot:0x00007fe550d12508 @value=3>,
 #=>  #<Snapshot:0x00007fe550d124e0 @value=6>,
@@ -54,18 +58,22 @@ Either of the options product the following:
 #=>  #<Snapshot:0x00007fe550d12378 @value=55>]
 ```
 
-I'd like something that looks like this, maybe?
+#### `Enumerable#transform`, maybe?
 
-```
+I _think_ I'd like something that looks like this… maybe:
+
+``` ruby
 (1..10).transform(Snapshot.new) { |prev_snap, i| prev_snap.apply(i) }
 ```
+
+<!-- more -->
 
 Is there such a thing?
 If not, how might such an API look?
 I'm not sure `#transform` is a great name, nor if a new method is required.
 Perhaps a new optional argument to `#map` would be sufficient?
 
-```
+``` ruby
 (1..10).map(Snapshot.new) { |i, prev_snap| prev_snap.apply(i) }
 ```
 
