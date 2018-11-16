@@ -70,6 +70,7 @@ I _think_ I'd like something that looks like this… maybe:
 
 Is there such a thing?
 If not, how might such an API look?
+
 I'm not sure `#transform` is a great name, nor if a new method is required.
 Perhaps a new optional argument to `#map` would be sufficient?
 
@@ -83,3 +84,5 @@ Or maybe follow `#inject`'s lead and if no initial value is provided, use the fi
 
 > If you do not explicitly specify an initial value for memo, then the first element of collection is used as the initial value of memo.
 > <cite>http://ruby-doc.org/core-2.5.3/Enumerable.html#method-i-inject</cite>
+
+*fin*
