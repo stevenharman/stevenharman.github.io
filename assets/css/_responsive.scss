@@ -28,7 +28,7 @@
 }
 
 @include media-query($on-smaller-tablets) {
-  .the-content .post { padding: 20px 20px 120px;
+  .the-content .post { padding: 20px 0.5rem 120px;
     .post-content {
       .heading-marker { position: static; left: auto; top: auto; font-size: inherit; margin: 0 0 0 10px; @include transform-none(); }
       .alignleft, .alignright { float: none; margin: 20px 0;
@@ -39,6 +39,13 @@
 }
 
 @include media-query($on-phone) {
-  .the-content .search > div .search-holder { width: 45%; }
-  .the-content .post .post-footer div.tags { position: static; text-align: left; border-top: 1px solid $grey-color-lightest; }
+  .wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .the-content {
+    .search > div .search-holder { width: 45%; }
+    .post .post-footer div.tags { position: static; text-align: left; border-top: 1px solid $grey-color-lightest; }
+  }
 }
