@@ -1,4 +1,16 @@
-.highlight { background: #fff; border: 1px solid $grey-color-lightest; padding: 30px;
+div.highlight {
+  border: 1px solid $grey-color-lightest;
+  padding: 0.5rem;
+}
+
+pre.highlight {
+  background: #fff;
+  overflow-x: scroll;
+
+  > code {
+    white-space: pre;
+  }
+
   .lineno { padding: 0 15px 0 0; }
   .highlighter-rouge & { background: #eef; }
   .c     { color: #998; font-style: italic } // Comment

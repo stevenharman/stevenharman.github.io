@@ -28,10 +28,25 @@
 }
 
 @include media-query($on-smaller-tablets) {
-  .the-content .post { padding: 20px 0.5rem 120px;
+  .the-content .post {
+    padding: 1rem 0.5rem 4rem;
+
     .post-content {
-      .heading-marker { position: static; left: auto; top: auto; font-size: inherit; margin: 0 0 0 10px; @include transform-none(); }
-      .alignleft, .alignright { float: none; margin: 20px 0;
+      .heading-marker {
+        @include transform-none();
+
+        font-size: inherit;
+        left: auto;
+        margin: 0 0 0 10px;
+        position: static;
+        top: auto;
+      }
+
+      .alignleft,
+      .alignright {
+        float: none;
+        margin: 20px 0;
+
         img { width: 100%; }
       }
     }
