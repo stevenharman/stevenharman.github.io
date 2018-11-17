@@ -31,7 +31,7 @@ jQuery(document).ready( function() {
       jQuery(this).append('<a class="heading-marker" href="#' + headingID + '">&#35;</a>');
     },
     mouseleave: function () {
-      jQuery(this).children('a').remove();
+      jQuery(this).children('a.heading-marker').remove();
     }
   });
 
