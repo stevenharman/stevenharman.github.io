@@ -28,6 +28,8 @@ jQuery(document).ready( function() {
   jQuery('.post-content').find(':header').on({
     mouseenter: function() {
       var headingID = jQuery(this).attr('id');
+      if (!headingID) { return }
+
       jQuery(this).append('<a class="heading-marker" href="#' + headingID + '">&#35;</a>');
     },
     mouseleave: function () {
