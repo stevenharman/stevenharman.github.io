@@ -40,7 +40,9 @@ snap = Snapshot.new
 In this case we use an awkward initial setup (pre-calculating the first iteration), and juggle the real value in the block.
 
 ``` ruby
-(2..10).inject([Snapshot.new(1)]) { |snaps, i| snaps.push(snaps.last.apply(i)) }
+(2..10).inject([Snapshot.new(1)]) { |snaps, i|
+  snaps.push(snaps.last.apply(i))
+}
 ```
 
 Both options product the following:
@@ -63,7 +65,9 @@ Both options product the following:
 I _think_ I'd like something that looks like this… maybe:
 
 ``` ruby
-(1..10).transform(Snapshot.new) { |prev_snap, i| prev_snap.apply(i) }
+(1..10).transform(Snapshot.new) { |prev_snap, i|
+  prev_snap.apply(i)
+}
 ```
 
 <!-- more -->
@@ -75,7 +79,9 @@ I'm not sure `#transform` is a great name, nor if a new method is required.
 Perhaps a new optional argument to `#map` would be sufficient?
 
 ``` ruby
-(1..10).map(Snapshot.new) { |i, prev_snap| prev_snap.apply(i) }
+(1..10).map(Snapshot.new) { |i, prev_snap|
+  prev_snap.apply(i)
+}
 ```
 
 This would mean there'd need to be a default initial value, of course.
