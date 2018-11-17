@@ -41,7 +41,7 @@ social_networks:
 
 # Modules Settings
 show_categories: 0
-show_tags: 1
+show_tags: 0
 show_email: 0
 show_rss: 1
 show_comments: 1
@@ -50,11 +50,11 @@ fixed_sidebar: 1
 
 # Plugins
 plugins:
+  - jekyll-avatar
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-avatar
 
 # Defaults
 defaults:
