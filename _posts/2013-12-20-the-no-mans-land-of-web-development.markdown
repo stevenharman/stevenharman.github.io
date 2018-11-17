@@ -11,7 +11,7 @@ bits of dynamism haphazardly mixed in. On the other are rich client-side
 JavaScript apps with their own structure and life cycles, standing alone and/or
 talking to an HTTP API.
 
-![No Man's Land Flanders Field France 1919.](/assets/images/posts/no-mans-land-flanders-field.jpg){:class="right"}
+![No Man's Land Flanders Field France 1919.](/assets/images/posts/no-mans-land-flanders-field.jpg){:class="img-thumbnail img-thumbnail--center"}
 
 Rails-era web apps have some great tooling and deliver a pretty nice
 development experience. The shift toward rich client-side web experiences has

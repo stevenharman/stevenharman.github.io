@@ -16,7 +16,7 @@ href="http://versionone.com/Product/Collaboration.asp"
 rel="external">Conversations</a> feature is the date and time at which
 portions of a conversation take place.
 
-[![Human-friendly date and time via jquery.timeago](/assets/images/posts/fuzzy-time-thumb.png)](/assets/images/posts/fuzzy-time.png)
+[![Human-friendly date and time via jquery.timeago](/assets/images/posts/fuzzy-time-thumb.png){:class="img-thumbnail img-thumbnail--center"}](/assets/images/posts/fuzzy-time.png)
 
 Notice the two highlighted areas. The
 tooltip shows fully-formatted, and much more precise information, with

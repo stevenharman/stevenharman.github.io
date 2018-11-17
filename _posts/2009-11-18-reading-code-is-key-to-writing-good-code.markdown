@@ -25,8 +25,7 @@ How arrogant of we programmers then to think that we won't, or don't, benefit fr
 
 ### Read, learn, and be inspired
 
-![Yay for reading!](/assets/images/posts/text.jpg){:class="right"}
-
+![Yay for reading!](/assets/images/posts/text.jpg){:class="img-thumbnail img-thumbnail--right"}
 In my experience we spend a great deal more time reading code than actually *writing* it. Whether it be the code you wrote just a few minutes ago or something you've inherited and are now maintaining, you're reading it. Of course, that's only considering the motive of reading code because you're currently working with.
 
 The greatest motivator for reading code is the opportunity it provides for learning and serving as a source of inspiration. Reading code exposes you to techniques, view points, styles, idioms, and algorithms that you may not have otherwise come across.

@@ -10,8 +10,7 @@ To rebase, or not to rebase - for me its not really a question. I
 generally prefer a clean, linear commit history. Why? Because merge bubbles make
 history confusing, noisy, and can break `git bisect`.
 
-![Y U NO REBASE!?!](/assets/images/posts/y-u-no-rebase-preview.jpg){:class="thumbnail right"}
-
+![Y U NO REBASE!?!](/assets/images/posts/y-u-no-rebase-preview.jpg){:class="img-thumbnail img-thumbnail--right"}
 Don't believe me? Check out the pretty log to the right. See all
 those merge bubbles in there? *Eww!*
 

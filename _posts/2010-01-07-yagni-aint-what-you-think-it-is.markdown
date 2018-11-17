@@ -13,7 +13,8 @@ This makes sense given that is basically the [definition][1] that [Ron Jeffries]
 
 ### Is that the whole story?
 
-[![Stop sign](/assets/images/posts/stop-sign.jpg){:class="right"}][3] In short, I don't think so.
+[![Stop sign](/assets/images/posts/stop-sign.jpg){:class="img-thumbnail img-thumbnail--right"}][3]
+In short, I don't think so.
 
 I've long believed there was more to YAGNI than what had been canonically defined and was commonly understood.
 However, until recently I was never able to put my finger on what was missing.

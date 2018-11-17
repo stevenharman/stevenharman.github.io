@@ -1,0 +1,36 @@
+.img-fluid {
+  @include img-fluid;
+}
+
+.img-thumbnail--left {
+  float: left;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.img-thumbnail--right {
+  float: right;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.img-thumbnail--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-thumbnail {
+  background-color: $thumbnail-bg;
+  border-radius: $thumbnail-border-radius;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
+  display: block;
+  padding: $thumbnail-padding;
+
+  // Keep them at most 100% wide
+  @include img-fluid;
+
+  @include media-query($on-phone) {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

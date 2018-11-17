@@ -6,8 +6,7 @@ comments: false
 categories:
 ---
 
-![Initial sketch of our Ideation Pipeline](/assets/images/posts/a-sketch-ideation-pipeline.png){:class="thumbnail left"}{:width="300"}
-
+![Initial sketch of our Ideation Pipeline](/assets/images/posts/a-sketch-ideation-pipeline.png){:class="img-thumbnail img-thumbnail--left"}{:width="300"}
 This is an initial sketch of an _Ideation Pipeline_ my team will be using to
 help drive the direction of a product we’re working on. The sketch is based on
 a discussion we had about how we currently get from an idea to delivering on

@@ -26,7 +26,7 @@ I realize that it's unfair to pick on sample code used in talks, but _"Problem 2
 Here the author claims that we too often stub where we should be mocking.
 He gives the following snippet:
 
-![Problem 2: Stubbing instead of mocking](/assets/images/posts/sensible-testing-code.png)
+![Problem 2: Stubbing instead of mocking](/assets/images/posts/sensible-testing-code.png){:class="img-thumbnail img-thumbnail--center"}
 
 Firstly I had to get over the use of the old RSpec 1.0-style `#stub!` and the overly verbose `#and_return` syntax.
 After resetting my brain I quickly realized the test was awkward.

@@ -9,10 +9,9 @@ Have you ever thought about just how much time we software folk spend
 focused on the technologies we're using, on implementation minutia,
 and on all of the shiny new *solutions* we *should* be using?
 
-[![Question mark](/assets/images/posts/question-mark.jpg){:class="right"}][1]
-
 Now contrast that with how often we stop to think about the **Whys**?
 
+[![Question mark](/assets/images/posts/question-mark.jpg){:class="img-thumbnail img-thumbnail--right"}][1]
 Why are we being asked to solve *fizz-buzz-thing*; do we understand the
 motivation and context behind the problem, or are we fixated on how
 we'll build the solution? Are we asking why a problem occurred, or are

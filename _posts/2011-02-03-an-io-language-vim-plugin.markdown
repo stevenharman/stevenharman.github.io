@@ -9,10 +9,9 @@ categories:
 Who here doesn't enjoy a little color in their life? I know I do, especially when
 used to highlight the syntax of a language - as anyone who's been around me while
 downing a few pints can attest!
+[![Io Syntax Highlighting in Vim](/assets/images/posts/io-syntax-thumb.png){:class="img-thumbnail img-thumbnail--right"}](/images/posts/io-syntax.png)
 
-<h3>Learning, Io, and Vim</h3>
-
-[![Io Syntax Highlighting in Vim](/assets/images/posts/io-syntax-thumb.png){:class="left"}](/images/posts/io-syntax.png)
+### Learning, Io, and Vim
 
 In an attempt to feed our insatiable desire to learn, a
 few of us at <a title="VersionOne: Simplifying Software Delivery" href=

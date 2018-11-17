@@ -6,8 +6,7 @@ comments: true
 categories:
 ---
 
-![Merry-Go-Round](/assets/images/posts/merry-go-round.png){:class="right"}
-
+![Merry-Go-Round](/assets/images/posts/merry-go-round.png){:class="img-thumbnail img-thumbnail--right"}
 Why does Rails' `accepts_nested_attributes_for` approach always feel so darned
 *wrong*?
 

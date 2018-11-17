@@ -10,8 +10,7 @@ tags: [ruby, rails, design]
 model in `app/models/`. I reserve `lib/` for those other things - those
 not-my-domain-things. I'd like to explain the *what* and *why*.
 
-![Boundaries Amongst the Fields; Deep Greens](/assets/images/posts/deep-greens-med.jpg){:class="right"}{:width="300"}
-
+![Boundaries Amongst the Fields; Deep Greens](/assets/images/posts/deep-greens-med.jpg){:class="img-thumbnail img-thumbnail--right"}{:width="300"}
 Rails has a history of co-opting names, as happened when the `ActiveRecord`
 library used the [active record pattern][active_record] name. A similar
 co-opting has happened with the [MVC pattern][mvc_pattern] wherein many believe

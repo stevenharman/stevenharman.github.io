@@ -12,17 +12,17 @@ I use it at my house to administer the headless servers on my home network, the 
 
 ### Gotta’ love that magic!
 
-![Ctrl + Alt + Del in Virtual PC](/assets/images/posts/virtual-pc-ctrl-alt-del.png){:class="left"}
-
 Today a [co-worker][micah] asked me how to send the infamous `Control + Alt + Delete` keystroke combination to a machine he was working on via <abbr title="Remote Display (or Desktop) Protocol">RDP</abbr>.
 This is a pretty common keystroke to use when trying administer windows… it does have uses other than just killing the box.
+
+![Ctrl + Alt + Del in Virtual PC](/assets/images/posts/virtual-pc-ctrl-alt-del.png){:class="img-thumbnail img-thumbnail--center"}
 
 With [Virtual PC][virtualpc] there is menu item to send the keystrokes on to the virtual box.
 Go to the *Action* menu and select the `Ctrl + Alt + Del` option.
 
 ### And with Remote Desktop?
 
-![The only keyboard you'll ever need](/assets/images/posts/ctrl-alt-del.gif){:class="right"}
+![The only keyboard you'll ever need](/assets/images/posts/ctrl-alt-del.gif){:class="img-thumbnail img-thumbnail--right"}
 
 Well it’s not quite as obvious. Actually it’s not an obvious solution at all…
 It might not even be documented!?
