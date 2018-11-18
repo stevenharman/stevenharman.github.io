@@ -551,9 +551,9 @@
         min-height: 48px;
 
         &.share {
-          @include bgsizeNum(10px, 10px);
           @include transition(background-color .1s ease);
           background: url(../svg/share-icon.svg) no-repeat 20px center;
+          @include bgsizeNum(10px, 10px);
           border-right: 1px solid $grey-color-lightest;
           cursor: pointer;
           padding: 0 20px 0 40px;
