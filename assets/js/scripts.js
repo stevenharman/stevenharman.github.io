@@ -18,7 +18,7 @@ jQuery(document).ready( function() {
   // Hides available sharing options and the number of search results.
   jQuery(document).on('click focus', function(e) {
     if (jQuery(e.target).closest('.share').length === 0 && jQuery(e.target).closest('#search-input').length === 0) {
-      jQuery('.show-results-count').removeClass('active show-results-count--has-results')
+      jQuery('.show-results-count').removeClass('active')
       jQuery('.results-container').hide();
       jQuery('.share').removeClass('active');
     }
