@@ -6,68 +6,255 @@
 @import "reset";
 @import "img";
 
-.wrapper { max-width: $default-width; margin: 0 auto; padding: 60px 20px; }
+.wrapper {
+  margin: 0 auto;
+  max-width: $default-width;
+  padding: 60px 20px;
+}
 
-.user-profile { position: absolute; top: 60px; width: 100%; max-width: 300px; text-align: center; @include transition(right .3s ease-in-out);
+.user-profile {
+  @include transition(right .3s ease-in-out);
+  max-width: 300px;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 100%;
+
   &.fixed { position: fixed; }
+
   .compact-header {
-    .avatar { display: block; margin: 0 auto 25px;
+
+    .avatar {
+      display: block;
+      margin: 0 auto 25px;
+
       &:hover img { opacity: .9; }
-      img { max-width: 140px; max-height: 140px; border-radius: 50%; @include transition(opacity .1s ease); }
+
+      img {
+        @include transition(opacity .1s ease);
+        border-radius: 50%;
+        max-height: 140px;
+        max-width: 140px;
+      }
     }
+
     .my-info {
-      .my-name { display: block; font-size: 24px; font-weight: 700; line-height: 30px; color: $grey-color-dark; }
-      .my-job-title { font-size: 14px; font-weight: 300; margin: 5px 0 0; }
+      .my-name {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: $grey-color-dark;
+      }
+
+      .my-job-title {
+        font-size: 14px;
+        font-weight: 300;
+        margin: 5px 0 0;
+      }
     }
   }
-  .mainmenu { margin: 40px 0; text-align: center;
-    a { display: block; max-width: 300px; margin: 0 auto; padding: 15px 0; border: 1px solid $grey-color-lightest; border-top: none; background: $background-color; box-shadow: 0 2px 3px rgba($black,.05); @include transition(all .1s ease);
-      &:hover, &.active { background: darken($background-color, 1%); box-shadow: 0 2px 3px rgba($black,.05), inset 4px 0 0 $primary-color; }
+
+  .mainmenu {
+    margin: 40px 0;
+    text-align: center;
+
+    a {
+      @include transition(all .1s ease);
+      background: $background-color;
+      border-top: none;
+      border: 1px solid $grey-color-lightest;
+      box-shadow: 0 2px 3px rgba($black,.05);
+      display: block;
+      margin: 0 auto;
+      max-width: 300px;
+      padding: 15px 0;
+
+      &:hover,
+      &.active {
+        background: darken($background-color, 1%);
+        box-shadow: 0 2px 3px rgba($black,.05), inset 4px 0 0 $primary-color;
+      }
+
       &:first-of-type { border-top: 1px solid $grey-color-lightest; }
     }
   }
-  .about-me { font-size: 16px; line-height: 26px; margin: 30px 0 0; }
-  .socials { @include flexbox(); @include justify-content(); margin: 25px 0 0;
-    li { margin: 5px;
-      a { @include flexbox(); @include align-items(); @include justify-content(); width: 40px; height: 40px; background: darken($grey-color-lightest, 6%); border-radius: 50%; @include transition(all .1s ease);
+
+  .about-me {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 30px 0 0;
+  }
+
+  .socials {
+    @include flexbox();
+    @include justify-content();
+    margin: 25px 0 0;
+
+    li {
+      margin: 5px;
+
+      a {
+        @include flexbox();
+        @include align-items();
+        @include justify-content();
+        @include transition(all .1s ease);
+        background: darken($grey-color-lightest, 6%);
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
         &:hover { background: $primary-color; }
+
         svg * { fill: $white; }
       }
     }
   }
 
-  .burger { display: none !important;
+  .burger {
+    display: none !important;
+
     .hidden { display: none; }
-    label { display: block; padding: 4*$burger-cell-height 0; cursor: pointer; margin: 0;
-      & > span { position: relative; display: block; width: 24px; height: $burger-cell-height; background: $grey-color-darker; text-indent: -9999px; @include transition(background .01s .3s ease);
-        &:before, &:after { position: absolute; left: 0; width: 24px; height: $burger-cell-height; background: $grey-color-darker; content: ""; @include transition(top .3s .35s ease, transform .3s .05s ease); }
+
+    label {
+      cursor: pointer;
+      display: block;
+      margin: 0;
+      padding: 4*$burger-cell-height 0;
+
+      & > span {
+        @include transition(background .01s .3s ease);
+        background: $grey-color-darker;
+        display: block;
+        height: $burger-cell-height;
+        position: relative;
+        text-indent: -9999px;
+        width: 24px;
+
+        &:before,
+        &:after {
+          @include transition(top .3s .35s ease, transform .3s .05s ease);
+          background: $grey-color-darker;
+          content: "";
+          height: $burger-cell-height;
+          left: 0;
+          position: absolute;
+          width: 24px;
+        }
+
         &:before { top: -(4*$burger-cell-height); }
         &:after { top: 4*$burger-cell-height; }
       }
     }
-    .trigger:checked ~ label > span { background: transparent;
-      &:after, &:before { @include transition(top .3s .05s ease, transform .3s .35s ease); top: 0; }
-      &:before { @include rotate(45deg); }
-      &:after { @include rotate(-45deg); }
+
+    .trigger:checked ~ label > span {
+      background: transparent;
+
+      &:after,
+      &:before {
+        @include transition(top .3s .05s ease, transform .3s .35s ease);
+        top: 0;
+      }
+      &:before {
+        @include rotate(45deg);
+      }
+      &:after {
+        @include rotate(-45deg);
+      }
     }
   }
 }
 
-.the-content { margin-left: 350px;
-  & > h1 { text-transform: uppercase; color: $grey-color-light; letter-spacing: 0.1em; font-size: 12px; font-weight: 400; margin: 0 0 20px; text-align: center; }
-  .search { position: relative; margin: 0 0 20px; border: 1px solid $grey-color-lightest; background: $white; box-shadow: 0 2px 3px rgba($black,.05), inset 6px 0 0 $grey-color-lightest; @include placeholder($grey-color-lighter, italic);
-    & > div { @include flexbox(); overflow: hidden;
-      .show-results-count { min-width: 100px; margin-left: -100px; padding: 0 20px; min-height: 55px; line-height: 55px; color: $grey-color-lighter; background: $white; letter-spacing: 0.05em; font-size: 11px; text-transform: uppercase; box-shadow: 6px 0 0 0 $grey-color-lightest; @include transition(all .2s ease);
+.the-content {
+  margin-left: 350px;
+
+  & > h1 {
+    color: $grey-color-light;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .search {
+    @include placeholder($grey-color-lighter, italic);
+    background: $white;
+    border: 1px solid $grey-color-lightest;
+    box-shadow: 0 2px 3px rgba($black,.05), inset 6px 0 0 $grey-color-lightest;
+    margin: 0 0 20px;
+    position: relative;
+
+    & > div {
+      @include flexbox();
+      overflow: hidden;
+
+      .show-results-count {
+        @include transition(all .2s ease);
+        background: $white;
+        box-shadow: 6px 0 0 0 $grey-color-lightest;
+        color: $grey-color-lighter;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        line-height: 55px;
+        margin-left: -100px;
+        min-height: 55px;
+        min-width: 100px;
+        padding: 0 20px;
+        text-transform: uppercase;
+
         &.active { margin-left: 0; }
       }
-      .search-holder { width: 100%; margin: 0 0 0 34px; background: url(../svg/search-icon.svg) no-repeat left center; @include bgsizeNum(15px, 16px); padding: 0 0 0 25px;
-        input { width: 100%; min-height: 55px; line-height: 22px; background: none; border: none; }
+
+      .search-holder {
+        @include bgsizeNum(15px, 16px);
+        background: url(../svg/search-icon.svg) no-repeat left center;
+        margin: 0 0 0 34px;
+        padding: 0 0 0 25px;
+        width: 100%;
+
+        input {
+          background: none;
+          border: none;
+          line-height: 22px;
+          min-height: 55px;
+          width: 100%;
+        }
       }
     }
-    .results-container { position: absolute; left: -1px; width: calc(100% + 2px); padding: 1px; box-shadow: inset 0 0 0 1px $grey-color-lightest, 0 7px 10px rgba($black,.05); z-index: 1000;
-      li { font-size: 15px;
-        a { position: relative; display: block; padding: 15px 15px 15px 35px; background: $background-color; box-shadow: 0 -1px 0 $grey-color-lightest; @include transition(background .1s ease);
-          &:before { position: absolute; top: 50%; left: 15px; background: $grey-color-normal; content: ""; width: 5px; height: 5px; border-radius: 50%; @include translate(0, -50%); }
+
+    .results-container {
+      box-shadow: inset 0 0 0 1px $grey-color-lightest, 0 7px 10px rgba($black,.05);
+      left: -1px;
+      padding: 1px;
+      position: absolute;
+      width: calc(100% + 2px);
+      z-index: 1000;
+
+      li {
+        font-size: 15px;
+
+        a {
+          @include transition(background .1s ease);
+          background: $background-color;
+          box-shadow: 0 -1px 0 $grey-color-lightest;
+          display: block;
+          padding: 15px 15px 15px 35px;
+          position: relative;
+
+          &:before {
+            @include translate(0, -50%);
+            background: $grey-color-normal;
+            border-radius: 50%;
+            content: "";
+            height: 5px;
+            left: 15px;
+            position: absolute;
+            top: 50%;
+            width: 5px;
+          }
+
           &:hover { background: $white; }
         }
       }
@@ -87,21 +274,64 @@
     &:first-of-type { margin: 0; }
 
     .post-header {
-      ul { @include flexbox(); margin: 0 0 6px;
-        li { position: relative; margin: 0 0 0 10px; padding: 0 0 0 12px; text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em; color: $grey-color-light;
-          &:first-of-type { margin: 0; padding: 0;
+      ul {
+        @include flexbox();
+        margin: 0 0 6px;
+
+        li {
+          color: $grey-color-light;
+          font-size: 12px;
+          letter-spacing: 0.06em;
+          margin: 0 0 0 10px;
+          padding: 0 0 0 12px;
+          position: relative;
+          text-transform: uppercase;
+
+          &:first-of-type {
+            margin: 0;
+            padding: 0;
+
             &:before { content: none; }
           }
-          &:before { position: absolute; top: 50%; left: 0; width: 3px; height: 3px; border-radius: 50%; background: $grey-color-lighter; content: ""; @include translate(0, -50%); }
-          &.cats a { color: $grey-color-light; border-bottom: 1px solid transparent; @include transition(all .1s ease);
+
+          &:before {
+            @include translate(0, -50%);
+            background: $grey-color-lighter;
+            border-radius: 50%;
+            content: "";
+            height: 3px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            width: 3px;
+          }
+
+          &.cats a {
+            @include transition(all .1s ease);
+            border-bottom: 1px solid transparent;
+            color: $grey-color-light;
+
             &:last-of-type:after { content: none; }
             &:after { content: ","; }
-            &:hover { color: $primary-color; border-bottom: 1px solid $primary-color; }
+            &:hover {
+              border-bottom: 1px solid $primary-color;
+              color: $primary-color;
+            }
           }
         }
       }
-      h1, h2 { font-size: 30px; font-weight: 900; margin: 0 0 20px; color: $grey-color-dark;
-        a { color: $grey-color-dark; @include transition(color .1s ease);
+
+      h1,
+      h2 {
+        color: $grey-color-dark;
+        font-size: 30px;
+        font-weight: 900;
+        margin: 0 0 20px;
+
+        a {
+          @include transition(color .1s ease);
+          color: $grey-color-dark;
+
           &:hover { color: $primary-color; }
         }
       }
@@ -113,18 +343,18 @@
 
       abbr {
         border-bottom: 1px dotted $grey-color-normal;
-        text-decoration: none;
         cursor: help;
+        text-decoration: none;
       }
 
       code,
       kbd,
       pre {
-        margin: 0;
         font-family: monospace;
-        word-wrap: break-word;
-        word-break: break-word;
+        margin: 0;
         white-space: pre-wrap;
+        word-break: break-word;
+        word-wrap: break-word;
       }
 
       address,
@@ -154,11 +384,17 @@
         color: $grey-color-dark;
       }
 
-      h1, h2, h3, h4, h5, h6 { position: relative;
-        left: -40px;
-        padding: 0 0 0 40px;
-        margin: 30px 0;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         color: $grey-color-dark;
+        left: -40px;
+        margin: 30px 0;
+        padding: 0 0 0 40px;
+        position: relative;
       }
 
       h1 { font-size: 30px; }
@@ -168,39 +404,106 @@
       h5 { font-size: 18px; }
       h6 { font-size: 16px; }
 
-      .heading-marker { position: absolute; left: 15px; top: 50%; border: none; font-weight: 400; color: darken($grey-color-lightest, 8%); font-size: 24px; @include transition(color .1s linear); @include translate(0, -50%);
+      .heading-marker {
+        @include transition(color .1s linear);
+        @include translate(0, -50%);
+        border: none;
+        color: darken($grey-color-lightest, 8%);
+        font-size: 24px;
+        font-weight: 400;
+        left: 15px;
+        position: absolute;
+        top: 50%;
+
         &:hover { color: $grey-color-light; }
       }
 
-      a { color: $primary-color; border-bottom: 1px solid $primary-color; @include transition(border .1s ease);
+      a {
+        @include transition(border .1s ease);
+        border-bottom: 1px solid $primary-color;
+        color: $primary-color;
+
         &:hover { border: none; }
       }
 
-      ul, ol { margin: 15px 0;
-        ul, ol { padding: 0 0 0 20px; }
-        li { margin: 5px 0;
-          & > code { font-size: 14px; padding: 3px 6px; background: $background-color; border: 1px solid $grey-color-lightest; }
+      ul,
+      ol {
+        margin: 15px 0;
+
+        ul,
+        ol {
+          padding: 0 0 0 20px;
+        }
+
+        li {
+          margin: 5px 0;
+
+          & > code {
+            background: $background-color;
+            border: 1px solid $grey-color-lightest;
+            font-size: 14px;
+            padding: 3px 6px;
+          }
         }
       }
 
-      dl { margin: 40px 0;
-        dt { margin: 10px 0 0; font-size: 18px; font-weight: 700; }
-        dd { margin: 5px 0;
-          & > code { font-size: 14px; padding: 3px 6px; background: $background-color; border: 1px solid $grey-color-lightest; }
+      dl {
+        margin: 40px 0;
+
+        dt {
+          font-weight: 700;
+          margin: 10px 0 0;
+        }
+
+        dd {
+          margin: 5px 0;
+
+          & > code {
+            background: $background-color;
+            border: 1px solid $grey-color-lightest;
+            padding: 3px 6px;
+          }
         }
       }
 
-      ul { list-style-type: disc; list-style-position: inside; }
-
-      p { margin: 15px 0; line-height: 27px;
-        & > code { font-size: 14px; padding: 3px 6px; background: $background-color; border: 1px solid $grey-color-lightest; }
+      ul {
+        list-style-position: inside;
+        list-style-type: disc;
       }
 
-      .alignleft { float: left; margin: 20px 30px 20px 0; }
-      .alignright { float: right; margin: 20px 0 20px 20px; }
-      .aligncenter { clear: both; margin: 0 auto 20px; }
+      p {
+        line-height: 27px;
+        margin: 15px 0;
 
-      figcaption { color: $grey-color-light; font-size: 13px; font-style: italic; padding-top: 10px; }
+        & > code {
+          background: $background-color;
+          border: 1px solid $grey-color-lightest;
+          font-size: 14px;
+          padding: 3px 6px;
+        }
+      }
+
+      .alignleft {
+        float: left;
+        margin: 20px 30px 20px 0;
+      }
+
+      .alignright {
+        float: right;
+        margin: 20px 0 20px 20px;
+      }
+
+      .aligncenter {
+        clear: both;
+        margin: 0 auto 20px;
+      }
+
+      figcaption {
+        color: $grey-color-light;
+        font-size: 13px;
+        font-style: italic;
+        padding-top: 10px;
+      }
 
       @import "syntax";
     }
@@ -215,8 +518,8 @@
         margin: 0;
 
         a {
-          color: $grey-color-dark;
           @include transition(color .1s ease);
+          color: $grey-color-dark;
 
           &:hover {
             color: $primary-color;
@@ -225,29 +528,105 @@
       }
     }
 
-    .post-footer { @include flexbox(); position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid $grey-color-lightest; background: lighten($grey-color-lightest, 5%); box-shadow: inset 0 10px 10px -9px rgba($black, .08);
-      div { min-height: 48px; font-size: 11px; line-height: 48px; color: $grey-color-light;
-        &.share { position: relative; padding: 0 20px 0 40px; text-transform: uppercase; background: url(../svg/share-icon.svg) no-repeat 20px center; border-right: 1px solid $grey-color-lightest; @include bgsizeNum(10px, 10px); @include transition(background-color .1s ease); cursor: pointer;
+    .post-footer {
+      @include flexbox();
+      background: lighten($grey-color-lightest, 5%);
+      border-top: 1px solid $grey-color-lightest;
+      bottom: 0;
+      box-shadow: inset 0 10px 10px -9px rgba($black, .08);
+      left: 0;
+      position: absolute;
+      width: 100%;
+
+      div {
+        color: $grey-color-light;
+        font-size: 11px;
+        line-height: 48px;
+        min-height: 48px;
+
+        &.share {
+          @include bgsizeNum(10px, 10px);
+          @include transition(background-color .1s ease);
+          background: url(../svg/share-icon.svg) no-repeat 20px center;
+          border-right: 1px solid $grey-color-lightest;
+          cursor: pointer;
+          padding: 0 20px 0 40px;
+          position: relative;
+          text-transform: uppercase;
+
           &:hover { background-color: $white; }
-          &.active { background-color: $white;
-            .social-networks { @include flexbox(); }
+
+          &.active {
+            background-color: $white;
+
+            .social-networks {
+              @include flexbox();
+            }
           }
-          .social-networks { display: none; position: absolute; top: -48px; left: 50%; width: 100px; box-shadow: 0 0 0 1px $grey-color-lightest, 0 3px 4px rgba($black,.05); @include translate(-50%, 0);
-            li { position: relative; width: 50%; min-height: 50px; background: $white; text-align: center; box-shadow: inset 1px 0 0 $grey-color-lightest; @include transition(background .1s ease);
+
+          .social-networks {
+            @include translate(-50%, 0);
+            box-shadow: 0 0 0 1px $grey-color-lightest, 0 3px 4px rgba($black,.05);
+            display: none;
+            left: 50%;
+            position: absolute;
+            top: -48px;
+            width: 100px;
+
+            li {
+              @include transition(background .1s ease);
+              background: $white;
+              box-shadow: inset 1px 0 0 $grey-color-lightest;
+              min-height: 50px;
+              position: relative;
+              text-align: center;
+              width: 50%;
+
               &:first-of-type { box-shadow: none; }
+
               &.share-facebook:hover { background: $facebook-brand-color; }
+
               &.share-twitter:hover { background: $twitter-brand-color; }
+
               &:hover a svg { fill: $white; }
-              a { position: absolute; width: 100%; height: 100%; left: 0; top: 0;
-                svg { display: inline-block; vertical-align: middle; @include transition(fill .1s ease); }
+
+              a {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+
+                svg {
+                  @include transition(fill .1s ease);
+                  display: inline-block;
+                  vertical-align: middle;
+                }
               }
             }
           }
         }
-        &.tags { width: 100%; padding: 0 10px; text-transform: lowercase;
-          ul { @include flexbox(); @include flex-flow(row wrap); @include justify-content(flex-end);
-            li { margin: 0 0 0 5px;
-              a { color: $grey-color-light; background: $grey-color-lightest; padding: 4px 10px; border-radius: 18px; @include transition(background .1s ease);
+
+        &.tags {
+          padding: 0 10px;
+          text-transform: lowercase;
+          width: 100%;
+
+          ul {
+            @include flexbox();
+            @include flex-flow(row wrap);
+            @include justify-content(flex-end);
+
+            li {
+              margin: 0 0 0 5px;
+
+              a {
+                @include transition(background .1s ease);
+                background: $grey-color-lightest;
+                border-radius: 18px;
+                color: $grey-color-light;
+                padding: 4px 10px;
+
                 &:hover { background: darken($grey-color-lightest, 4%); }
               }
             }
@@ -257,19 +636,60 @@
     }
   }
 
-  .comments { position: relative; margin: 40px 0 0; padding: 40px; border: 1px solid $grey-color-lightest; background: $white; box-shadow: 0 2px 3px rgba($black,.05); }
+  .comments {
+    background: $white;
+    border: 1px solid $grey-color-lightest;
+    box-shadow: 0 2px 3px rgba($black,.05);
+    margin: 40px 0 0;
+    padding: 40px;
+    position: relative;
+  }
 
-  .pagination { @include flexbox(); @include justify-content(space-between); position: relative; margin: 40px 0 0;
-    &.next { @include justify-content(flex-end); }
-    .previous, .next { padding: 14px 20px; border: 1px solid $grey-color-lightest; background: $white; box-shadow: 0 2px 3px rgba($black,.05); text-transform: uppercase; font-size: 14px; font-weight: 900; color: $grey-color-normal;
-      &:hover { background: $primary-color; color: $white; }
+  .pagination {
+    @include flexbox();
+    @include justify-content(space-between);
+    margin: 40px 0 0;
+    position: relative;
+
+    &.next {
+      @include justify-content(flex-end);
     }
-    .page_number { position: absolute; left: 50%; top: 50%; @include translate(-50%, -50%); font-size: 12px; color: $grey-color-light; }
+
+    .previous,
+    .next {
+      background: $white;
+      border: 1px solid $grey-color-lightest;
+      box-shadow: 0 2px 3px rgba($black,.05);
+      color: $grey-color-normal;
+      font-size: 14px;
+      font-weight: 900;
+      padding: 14px 20px;
+      text-transform: uppercase;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+
+    .page_number {
+      @include translate(-50%, -50%);
+      color: $grey-color-light;
+      font-size: 12px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+    }
   }
 }
 
-.not-found { text-align: center;
-  &.post { padding: 40px; font-size: 16px; }
+.not-found {
+  text-align: center;
+
+  &.post {
+    font-size: 16px;
+    padding: 40px;
+  }
 }
 
 @import "responsive";
