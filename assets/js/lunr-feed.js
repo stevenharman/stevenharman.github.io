@@ -38,7 +38,14 @@ $(document).ready(function() {
     var query = $(this).val();
     var result = index.search(query);
     resultdiv.empty();
+
     $('.show-results-count').text(result.length + ' Results');
+    if (result.length > 0) {
+      $('.show-results-count').addClass('show-results-count--has-results')
+    } else {
+      $('.show-results-count').removeClass('show-results-count--has-results')
+    }
+
     for (var item in result) {
       var ref = result[item].ref;
       var searchitem = '<li><a href="'+ hostname + store[ref].link+'">'+store[ref].title+'</a></li>';

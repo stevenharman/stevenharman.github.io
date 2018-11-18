@@ -195,22 +195,28 @@
         background: $white;
         box-shadow: 6px 0 0 0 $grey-color-lightest;
         color: $grey-color-lighter;
-        font-size: 11px;
-        letter-spacing: 0.05em;
         line-height: 55px;
+        font-size: 0.75rem;
+        min-width: 100px;
         margin-left: -100px;
         min-height: 55px;
-        min-width: 100px;
-        padding: 0 20px;
+        padding: 0 1rem;
         text-transform: uppercase;
+        white-space: nowrap;
 
-        &.active { margin-left: 0; }
+        &.active {
+          margin-left: 0;
+        }
+
+        &.show-results-count--has-results {
+          color: $primary-color;
+        }
       }
 
       .search-holder {
         background: url(../svg/search-icon.svg) no-repeat left center;
         @include bgsizeNum(15px, 16px);
-        margin: 0 0 0 34px;
+        margin: 0 0 0 1.25rem;
         padding: 0 0 0 25px;
         width: 100%;
 
