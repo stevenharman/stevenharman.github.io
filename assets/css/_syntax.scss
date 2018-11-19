@@ -9,6 +9,8 @@ pre.highlight {
 
   > code {
     white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
   }
 
   .lineno { padding: 0 15px 0 0; }
