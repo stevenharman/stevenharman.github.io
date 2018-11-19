@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "In Search Of... Enumerable#transform for Ruby"
+title: "In Search Of… Enumerable#transform for Ruby"
 date: 2018-11-16 10:56:01 -0500
 comments: true
 tags: [ruby]
@@ -69,7 +69,7 @@ Which works, but setting up the initial value only so we can re-assign it a new 
 
 In this case we use an awkward initial setup (pre-calculating the first iteration), and juggle the real value in the block.
 
-🎩 _Hat tip to [Matt Jones](https://twitter.com/al2o3cr) for showing me this one._
+🎩 _Hat tip to [Matt Jones](https://twitter.com/al2o3cr) for this one._
 
 ```ruby
 (2..10).inject([Snapshot.new(1)]) { |snaps, i|
