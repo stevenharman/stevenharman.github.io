@@ -12,7 +12,7 @@ Sounds odd, I know.
 
 Given the following "value object"
 
-``` ruby
+```ruby
 class Snapshot
   def initialize(value = 0)
     @value = value
@@ -27,7 +27,7 @@ end
 I want to build an array of snapshots, based on some set of inputs.
 Meaning, I _think_ I'd like something that looks like this
 
-``` ruby
+```ruby
 (1..10).transform(Snapshot.new) { |prev_snap, i|
   prev_snap.apply(i)
 }
@@ -58,7 +58,7 @@ It can be done with `Enumerable#map` or `Enumerable#inject`, but it ain't pretty
 
 Here we set an initial value, and re-assign it in each iteration.
 
-``` ruby
+```ruby
 snap = Snapshot.new
 (1..10).map { |i| snap = snap.apply(i) }
 ```
@@ -71,7 +71,7 @@ In this case we use an awkward initial setup (pre-calculating the first iteratio
 
 🎩 _Hat tip to [Matt Jones](https://twitter.com/al2o3cr) for showing me this one._
 
-``` ruby
+```ruby
 (2..10).inject([Snapshot.new(1)]) { |snaps, i|
   snaps.push(snaps.last.apply(i))
 }
@@ -79,7 +79,7 @@ In this case we use an awkward initial setup (pre-calculating the first iteratio
 
 On the up side, both options product the following, desired output!
 
-``` irb
+```irb
 #=> [#<Snapshot:0x00007fe550d12558 @value=1>,
 #=>  #<Snapshot:0x00007fe550d12508 @value=3>,
 #=>  #<Snapshot:0x00007fe550d124e0 @value=6>,
@@ -99,7 +99,7 @@ Well, it's completely made up.
 By me.
 Just now.
 
-``` ruby
+```ruby
 (1..10).transform(Snapshot.new) { |prev_snap, i|
   prev_snap.apply(i)
 }
@@ -109,7 +109,7 @@ I'm not particularly sold on the name `#transform`, nor the other particulars.
 Perhaps a new method isn't even needed?
 An optional argument to `#map` might be sufficient?
 
-``` ruby
+```ruby
 (1..10).map(Snapshot.new) { |i, prev_snap|
   prev_snap.apply(i)
 }

@@ -41,15 +41,17 @@ This is the "re-writing" of history folks often talk about.
 You can tell git to use rebase, rather than merge, in one of two ways, depending on
 your situation.
 
-```
-$ git config branch.autosetuprebase always # Force all new branches to automatically use rebase
+```shell
+# Force all new branches to automatically use rebase
+$ git config branch.autosetuprebase always
 ```
 
 You can add the `--global` switch to have all future branches, in all
 repositories on this machine, behave this way.
 
-```
-$ git config branch.*branch-name*.rebase true # Force existing branches to use rebase.
+```shell
+# Force existing branches to use rebase.
+$ git config branch.*branch-name*.rebase true
 ```
 
 <h3>Get more info</h3>
