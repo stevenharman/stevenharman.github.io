@@ -54,16 +54,15 @@ $(document).ready( function() {
 
       getScrollPos();
 
-      $(document).scroll( function() {
+      $(document).on('scroll', function() {
         getScrollPos();
       });
 
       backToTopButton.on({
         click: function(e) {
-          var elPos = el.scrollTop();
-
-          if (elPos !== 0)
+          if ($(document).scrollTop() !== 0) {
             el.animate({scrollTop: 0}, 300);
+          }
 
           e.preventDefault();
         },
