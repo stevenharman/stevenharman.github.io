@@ -17,11 +17,11 @@ This makes sense given that is basically the [definition][1] that [Ron Jeffries]
 In short, I don't think so.
 
 I've long believed there was more to YAGNI than what had been canonically defined and was commonly understood.
-However, until recently I was never able to put my finger on what was missing.
+But only recently was I able to put my finger on what was missing.
 
 While listening to an episode of [Industry Misinterpretations][4] I heard [Kent Beck][5] make a subtle point about the need to make progress being more important than the completeness of the thing you're building at the point you're building it.
-Lending from Kent's insight and mixing in much of my own experience, I realized YAGNI is not about delaying building things until you need them;
-it's that gaining real experience in the problem domain, while making concrete progress, is more important than trying to achieve a complete solution *right now*.
+Lending from Kent's insight and mixing in my own experience, I realized YAGNI is not about delaying building things until you need them.
+Rather, it's that gaining real experience in the problem domain, while making concrete progress, is more important than trying to achieve a complete solution *right now*.
 
 Do you think it's too early to update the [Wikipedia article][6]?
 
