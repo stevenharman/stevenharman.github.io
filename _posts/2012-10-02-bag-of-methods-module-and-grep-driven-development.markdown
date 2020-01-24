@@ -30,5 +30,5 @@ terms for your consideration.
 Thanks to fellow [Highgroover][highgroove], [Andy Lindeman][andy], for helping me
 to finally define these terms. Or at least, refine them.
 
-[highgroove]: http://highgroove.com Ruby and Ruby on Rails Consulting, Development, and Training
+[highgroove]: http://highgroove.com "Ruby and Ruby on Rails Consulting, Development, and Training"
 [andy]: http://www.andylindeman.com
