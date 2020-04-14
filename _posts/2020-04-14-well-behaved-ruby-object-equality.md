@@ -4,6 +4,7 @@ title: "Well-behaved Ruby Object: Equality"
 date: 2020-04-14 12:40:01 -0400
 comments: true
 tags: [ruby]
+description: Implement `hash` and `eql?` for use as a `Hash` key, and then `alias` the `eql?` to `==` for the expected developer ergonomics.
 ---
 
 A "well-behaved" object in Ruby needs to understand the following:

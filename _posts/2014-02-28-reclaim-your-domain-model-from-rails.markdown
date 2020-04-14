@@ -4,11 +4,14 @@ title: "Reclaim Your Domain Model from Rails"
 date: 2014-02-28 14:51:47 -0500
 comments: true
 tags: [ruby, rails, design]
+image: /assets/images/posts/deep-greens-med.jpg
+description: When building an application using Rails, I prefer to keep all my model in `app/models/`. I reserve `lib/` for those other things - those not-my-domain-things.
 ---
 
-**TL,DR;** When building an application using Rails, I prefer to keep all my
-model in `app/models/`. I reserve `lib/` for those other things - those
-not-my-domain-things. I'd like to explain the *what* and *why*.
+**TL,DR;**
+When building an application using Rails, I prefer to keep all my model in `app/models/`.
+I reserve `lib/` for those other things - those not-my-domain-things.
+I'd like to explain the *what* and *why*.
 
 ![Boundaries Amongst the Fields; Deep Greens](/assets/images/posts/deep-greens-med.jpg){:class="img-thumbnail img-thumbnail--right"}{:width="300"}
 Rails has a history of co-opting names, as happened when the `ActiveRecord`
