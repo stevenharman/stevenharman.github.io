@@ -54,7 +54,7 @@ Read on, friend…
 
 As it turns out, Russ Olsen covers this very topic, in depth and with great examples, in his book, [Eloquent Ruby][eloquent-ruby].
 I should know that because I've read that book, and recommend it!
-However, it always takes me several trips to The Googles to find a snippet which eventually poisnts me back to that book.
+However, it always takes me several trips to The Googles to find a snippet which eventually points me back to that book.
 At which point I have to dig out my copy.
 All of this only after I've tried a dozen other search terms resulting in articles about [the difference between the many forms of equality in Ruby][diff-equals].
 
