@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Well-behaved Ruby Object: Equality"
+title: "Well-behaved Ruby Objects: Equality"
 date: 2020-04-14 12:40:01 -0400
 comments: true
 tags: [ruby]
