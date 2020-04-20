@@ -20,7 +20,7 @@ And because I've got this blurgh-thing… I might as well use it to help future-
 
 ## Gimme the gist
 
-Implement `hash` and `eql?` for use as a `Hash` key, and then `alias` the `eql?` to `==` for the expected developer ergonomics. 
+Implement `hash` and `eql?` for use as a `Hash` key, and then `alias` the `eql?` method to `==` for the expected developer ergonomics.
 Something like this:
 
 ```ruby
@@ -148,9 +148,14 @@ This operator is used to determine if one object is less than the other, greater
 Ruby's `Comparable` module will use that to implement several comparison operators.
 And all of that can be use by other Ruby modules, like `Enmerable` to do things like sort a collection.
 
-_Neat!_
+🤓 _Neat!_
 
 Again, Mr. Olsen's book, or any number of other articles, including the [Ruby docs for `Comparable`][ruby-comparable], cover this in great detail.
+
+## The gist, once more
+
+To recap, implement the `hash` and `eql?` methods to use an object as a `Hash` key.
+Then `alias` the `eql?` method to `==` to cover they typical, "every day", usage we expect when writing/reading Ruby.
 
 [diff-equals]: https://medium.com/@khalidh64/difference-between-eql-equal-in-ruby-2ffa7f073532 "Difference Between ==, eql?, equal? in ruby"
 [eloquent-ruby]: https://amzn.to/2RC7Ph3 "Eloquent Ruby, by Russ Olsen"
