@@ -79,7 +79,7 @@ Or perhaps even worse, a script we use rarely, but which does some crucial task.
 
 I find myself reading my own quick, one-off commands ALL THE TIME by way of my shell's reverse fuzzy command history.
 
-[![Shell reverse history fuzzy search with ZShell Navigation Tools](/assets/images/posts/curl-shell-history-example.gif){:class="img-thumbnail img-thumbnail--center"}](/assets/images/posts/curl-shell-history-example.gif)
+![Shell reverse history fuzzy search with Zsh Navigation Tools](/assets/images/posts/curl-shell-history-example.gif){:class="img-thumbnail img-thumbnail--center"}
 
 By using long-form options when available, I can leverage those more readable and memorable names to search my command history.
 Above I search `curl data` and quickly find a prior `cURL` command that posted some JSON data.
