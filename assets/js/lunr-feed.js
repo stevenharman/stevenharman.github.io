@@ -1,5 +1,3 @@
----
----
 var hostname = "{{site.url}}{{site.baseurl}}";
 var index = lunr(function () {
   this.field('title')
