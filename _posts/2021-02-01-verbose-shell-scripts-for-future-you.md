@@ -51,7 +51,7 @@ They're more terse.
 Literally, they are less to type, less to read, and _smaller_.
 
 These can be desirable traits when writing a one-off commands in your shell.
-With less to type you can execute your command sooner.
+With less, to type you can execute the command sooner.
 Seems Good™️.
 
 A drawback of this terseness is a decrease in readability and increase in cognitive load.
@@ -65,9 +65,9 @@ $ curl --head --location --silent --show-error http://stevenharman.net
 ```
 
 To my eyes and brain, parsing and understanding that first line is difficult, at best.
-Examples like the casing of `s` vs `S` being different, but related options, abound.
-It's also difficult to _notice_ the difference in casing when scanning the code later.
-Especially days, weeks, or years later, when you've totally forgotten there the two different options exist.
+Examples like the casing of `s` vs `S` referring to different, but related options, abound.
+It's also difficult to _notice_ the difference in casing when scanning the code.
+Especially days, weeks, or years later, when you've totally forgotten that there is a difference.
 
 But hey, if I'm just ripping off a quick `cURL` to check if my site is up, who cares? 
 Presumably _I_ know and remember what each of those `-HLsS` options are doing, so I saved myself a bunch of typing.
@@ -81,8 +81,8 @@ Well, they're longer, no doubt about that!
 
 I find that makes them easier to read at a glance.
 And their names help to tell _what they do_ - why they're being used, in the context.
-Two properties which are immensely valuable when used in long-lived scripts.
-For example, when used as part of a shell script that my team uses for daily operations.
+Both properties are immensely valuable when used in long-lived scripts.
+For example, when as a part of a shell script that my team uses for daily operations.
 Or perhaps even worse, a script we use rarely, but which does some crucial task.
 
 The glance-ability and memorability of the longer names also pays off when searching for a one-liner after the fact.
@@ -92,10 +92,10 @@ A trick I use ALL THE TIME!
 ![Shell reverse history fuzzy search with Zsh Navigation Tools](/assets/images/posts/curl-shell-history-example.gif){:class="img-thumbnail img-thumbnail--center"}
 
 Above I search `curl data` and quickly find a prior `cURL` command that posted some JSON data.
-Exactly what I needed, because I can never remember exactly how that works.
+Exactly what I needed (because I can never remember exactly how that works).
 The same goes for the many CLIs and their innumerable options that I use on a daily basis.
 
-A drawback to that verbosity is the inverse of the big advantage of the short-form: there's more to type!
+A drawback to the verbosity is there's more to type!
 Which I suppose leads to more typos and [non-zero exit codes][zero_exit_code].
 Though, if we're optimizing for read-time, rather than write-time, maybe that isn't such a big deal. 🤷
 
@@ -103,7 +103,7 @@ Though, if we're optimizing for read-time, rather than write-time, maybe that is
 
 Whatever history might have to say about _why_ we have long options, I prefer to use them when they're available.
 That goes for both one-off commands in the shell, and doubly so for scripts that will exist beyond their initial authoring.
-Admittedly, sometimes I am a bit lazy, or overly rely on muscle memory, and fall back to short options for those one-offs. 🙈
+Admittedly, sometimes I am a bit lazy, or overly rely on muscle memory, and fall back to short options. 🙈
 
 If you don't already, I'd encourage you to try using long options, especially for scripts.
 But like I said, neither is right nor wrong.
