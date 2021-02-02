@@ -9,7 +9,7 @@ description: "When writing shell scripts prefer long options; make things easier
 ---
 
 Command line tools and [shell builtins][shell_builtins] can offer both a short- and long-form way to specify options.
-Sometimes these are also called sort and long flags, respectively.
+Sometimes these are also called short and long flags, respectively.
 The upshot is a user experience with two ways to specify the same option.
 A short and terse way.
 And a longer, more verbose way.
