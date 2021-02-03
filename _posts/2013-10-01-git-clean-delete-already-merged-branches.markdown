@@ -3,11 +3,13 @@ layout: post
 title: "Git Clean: Delete Already-Merged Branches"
 date: 2013-10-01 15:20
 comments: true
-categories:
+tags: [shell, git]
+image: /assets/images/posts/git-clean-example.jpg
+description: "Clean up local branches which have already been merged into master."
 ---
 ## TL;DR
 
-To delete local branches which have alread been merged into `master`:
+To delete local branches which have already been merged into `master`:
 
     $ git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
 
