@@ -37,14 +37,6 @@ jQuery(document).ready( function() {
     }
   });
 
-  // Automatically sets the first post image as a featured image on Facebook and Twitter.
-  var firstImg = jQuery('.post.single').find('img:first-of-type');
-  var firstImgSrc = firstImg.attr('src');
-  if (typeof firstImgSrc !== 'undefined') {
-    jQuery('meta[property="og:image"]').attr('content', firstImgSrc);
-    jQuery('meta[name="twitter:image"]').attr('content', firstImgSrc);
-  }
-
   // Menus Show/Hide
   var steveSidebar = jQuery('.user-profile');
   var viewportWidth = window.innerWidth;
