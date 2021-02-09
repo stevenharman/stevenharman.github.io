@@ -5,15 +5,15 @@ date: 2013-10-01 15:20
 comments: true
 tags: [shell, git]
 image: /assets/images/posts/git-clean-example.jpg
-description: "Clean up local branches which have already been merged into master."
+description: "Clean up local branches which have already been merged into main."
 ---
 ## TL;DR
 
-To delete local branches which have already been merged into `master`:
+To delete local branches which have already been merged into `main`:
 
-    $ git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
+    $ git branch --merged main | grep -v "\* main" | xargs -n 1 git branch -d
 
-You can omit the `master` branch argument to remove local branches which have
+You can omit the `main` branch argument to remove local branches which have
 already been merged into the current `HEAD`:
 
     $ git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
@@ -27,7 +27,7 @@ into the current branch (i.e. `HEAD`)
 
       add_new_user_gravatar_links
       assign_unique_key_to_uploads
-    * master
+    * main
       remember_the_last_activity_per_user
       update_kaminari_to_thread_safe_version
 
