@@ -18,7 +18,7 @@ $ bin/jekyll serve --watch --incremental
 
 ## Deploying
 
-1. `git push origin master`
+1. `git push origin main`
 1. *There is no step 2.*
 
 [gh-pages]: https://pages.github.com/
