@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.1.2"
+# Keep in sync with what's run on GitHub: https://pages.github.com/versions/
+ruby "2.7.4"
 
 gem "github-pages", group: :jekyll_plugins
