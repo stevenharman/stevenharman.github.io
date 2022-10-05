@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Cherry-picking Specific ActiveSupport Behavior"
+title: "Cherry-picking Specific Active Support Behavior"
 date: 2022-10-05
 comments: true
 tags: [rails]
 image: /assets/images/posts/ruby-name-error-isolated-execution-state.jpg
-description: "Cherry-picking specific extensions/behavior from ActiveSupport."
+description: "Cherry-picking specific extensions/behavior from Active Support."
 ---
 
 The [Active Support library](as-lib) has always (or, _close enough to always_) allowed us to cherry-pick specific extensions/behaviors, to load only strictly needed dependencies.
@@ -13,7 +13,7 @@ That is, rather than loading the entirety of the library, we can load just the b
 This helps keep the amount of things loaded in memory smaller, and faster by doing less work.
 It can also aide in understanding by making more explicit the dependencies some code relies on.
 
-I've been using this technique for years, and it's been rock solid.
+I've been using this technique for years, and it's been solid.
 Until today, while working on a Rails 7 code base, when I started seeing an error: 
 
 ```console
@@ -95,6 +95,8 @@ require "active_support/all"
 ```
 
 Phew, glad to have gotten to the bottom of that one! 🎉
+
+And a shout-out to [`@gektin`](https://github.com/gektin) for helping me dive into this one.
 
 [as-guide-core-ext]: https://guides.rubyonrails.org/active_support_core_extensions.html#how-to-load-core-extensions "Stand-Alone Active Support"
 [as-lib]: https://edgeguides.rubyonrails.org/active_support_core_extensions.html "Active Support Core Extensions"
