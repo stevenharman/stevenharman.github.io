@@ -39,6 +39,7 @@ social_networks:
 - { name: bitcoin, url: '' }
 - { name: pocket, url: '' }
 - { name: applemusic, url: 'https://itunes.apple.com/profile/stevenharman' }
+- { name: mastodon, url: 'https://ruby.social/@stevenharman' }
 
 # Modules Settings
 show_categories: 0
