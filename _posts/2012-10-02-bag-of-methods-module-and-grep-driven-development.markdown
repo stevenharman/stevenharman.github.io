@@ -9,7 +9,7 @@ Always looking for more concise ways to express ideas, I'd like to present two
 terms for your consideration.
 
 <dl>
-  <dt><a id='bomm'>BOMM</a> <em>|bäm|</em> <i>(abbreviation)</i></dt>
+  <dt><a id='bomm'>BOMM</a> <em>|bäm|</em> <i>(acronym)</i></dt>
   <dd>Bag of Methods Module</dd>
   <dd>An anti-pattern for "sharing behavior" or "separating concerns" of an
   object. In practice such modules often contain code that is related in name or
