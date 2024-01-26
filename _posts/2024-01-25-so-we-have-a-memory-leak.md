@@ -149,14 +149,14 @@ Picking the process with the most memory (i.e., the leakiest of them) we use its
 
 ### Step 2: Enable memory allocation tracing {#step-2-enable-tracing}
 
-We `export` that worker process ID as `DUMP_PID` to be used as a variable in later steps.
+We `export` that worker process ID as `$DUMP_PID` to be used as a variable in later steps.
 This helps prevent silly typos and much face-into-keyboard-ing later on.
 
 ```bash
 export DUMP_PID=<pid>
 # Turn on allocation tracking in the Ruby process.
 # This will impact performance; it can use a lot of memory and CPU
-rbtrace -p "$DUMP_PID" -e "Thread.new{require 'objspace';ObjectSpace.trace_object_allocations_start}.join"
+rbtrace -p "${DUMP_PID}" -e "Thread.new{require 'objspace';ObjectSpace.trace_object_allocations_start}.join"
 ```
 
 ### Step 3: Dump the heap {#step-3-dump-the-heap}
@@ -200,7 +200,7 @@ Be sure to turn off the allocation tracking, and probably remove those dumps fro
 Or just restart the Dyno.
 
 ```bash
-rbtrace -p "$DUMP_PID" -e "Thread.new{GC.start;require 'objspace';ObjectSpace.trace_object_allocations_stop;ObjectSpace.trace_object_allocations_clear}.join"
+rbtrace -p "${DUMP_PID}" -e "Thread.new{GC.start;require 'objspace';ObjectSpace.trace_object_allocations_stop;ObjectSpace.trace_object_allocations_clear}.join"
 ```
 
 [heroku_ps_exec]: https://devcenter.heroku.com/articles/exec "Heroku Exec (SSH Tunneling)"
