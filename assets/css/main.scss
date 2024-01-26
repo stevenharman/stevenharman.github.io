@@ -504,11 +504,14 @@
         margin: 0 auto 20px;
       }
 
+      .text-center {
+        text-align: center;
+      }
+
       figcaption {
         color: $grey-color-light;
         font-size: 13px;
         font-style: italic;
-        padding-top: 10px;
       }
 
       @import "syntax";
