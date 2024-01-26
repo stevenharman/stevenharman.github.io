@@ -50,6 +50,17 @@ show_comments: 1
 show_menu: 1
 fixed_sidebar: 1
 
+comments:
+  giscus:
+    enabled: true
+    repo: "stevenharman/stevenharman.github.io"
+    repo_id: "MDEwOlJlcG9zaXRvcnkxNTc5MTc1MDE="
+    category: "Announcements"
+    category_id: "DIC_kwDOCWmhPc4CcuAb"
+    mapping: "pathname"
+    reactions_enabled: "1"
+    theme: "light"
+
 # Plugins
 plugins:
   - jekyll-avatar
