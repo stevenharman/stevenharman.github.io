@@ -1,0 +1,7 @@
+<figure>
+  <img src="/assets/images/posts/{{ include.src }}"
+       alt="{{ include.alt }}"
+       title="{{ include.caption | default: include.alt }}">
+  <figcaption class="text-center">{{ include.caption | default: include.alt }}</figcaption>
+</figure>
+

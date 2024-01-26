@@ -40,12 +40,9 @@ Then one, nondescript day, amongst the usual flow of deploys, memory started spi
 The pager started yelling. 📟
 And we had what looked like a memory leak. 💧
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/initial-memory-spikes.png"
-       alt="Graph of memory starting to spike over and over mid-way across the view"
-       title="We have a memory leak! So. Many. Spikeys!">
-  <figcaption class="text-center">We have a memory leak! So. Many. Spikeys!</figcaption>
-</figure>
+{% include figure.html src="memory_leak/initial-memory-spikes.png"
+                       alt="Graph of memory starting to spike over and over mid-way across the view"
+                       caption="We have a memory leak! So. Many. Spikeys!" %}
 
 [sheap]: https://github.com/jhawthorn/sheap "sheap - A library for interactively exploring Ruby Heap dumps. Sheap contains contains a command-line tool and a library for use in IRB."
 [heapy]: https://github.com/zombocom/heapy "Heapy (Ruby Heap Dump Inspector) - A CLI for analyzing Ruby Heap dumps."
@@ -95,12 +92,9 @@ Sometimes they'd go hours with relatively flat-ish memory usage consistent with 
 Then one, or a few, or all of them would start to leak memory.
 This made us suspicious that perhaps the leak was specific to a certain *kind* of traffic, rather than a problem in the stack, or with volume of traffic.
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/memory-spikes-delayed.png"
-       alt="Graph of memory flat for 4 hours, and then starting to rise."
-       title="Low-traffic period, just post deploy. Hours pass before 2 of 4 Dynos start to leak memory.">
-  <figcaption class="text-center">Low-traffic period, just post deploy. Hours pass before 2 of 4 Dynos start to leak memory.</figcaption>
-</figure>
+{% include figure.html src="memory_leak/memory-spikes-delayed.png"
+                       alt="Graph of memory flat for 4 hours, and then starting to rise"
+                       caption="Low-traffic period, just post deploy. Hours pass before 2 of 4 Dynos start to leak memory." %}
 
 When we looked at our Puma workers, we also saw that not all workers on a single Dyno were leaking.
 We run Puma in clustered mode, with 12 worker processes for the 8 <abbr title="Virtual CPU">vCPU</abbr> on each Dyno.
@@ -231,12 +225,8 @@ The way to read this is starting at the top and moving downward are references f
 That is, objects further down are references by objects above them.
 And the more memory an object (or an object it references) is holding onto, the wider the cell in the graph.
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/flamegraph-2.png"
-       alt="Flame graph showing a Thread holding 1.9GiB of memory"
-       title="Flame graph showing a Thread holding 1.9GiB of memory">
-  <figcaption class="text-center">Flame graph showing a Thread holding 1.9GiB of memory</figcaption>
-</figure>
+{% include figure.html src="memory_leak/flamegraph-2.png"
+                       alt="Flame graph showing a Thread holding 1.9GiB of memory." %}
 
 Notice anything odd?
 What's up with that `Thread` holding 1.9GiB of memory?
@@ -245,13 +235,8 @@ So what the heck is that array?
 Where did it come from?
 Why is it referencing so much memory?
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/flamegraph-2-annotated.png"
-       alt="Flame graph calling out an Array of 32k things, referencing 1.9GiB of memory"
-       title="Flame graph calling out an Array of 32k things, referencing 1.9GiB of memory">
-  <figcaption class="text-center">Flame graph calling out an Array of 32k things, referencing 1.9GiB of memory</figcaption>
-</figure>
-
+{% include figure.html src="memory_leak/flamegraph-2-annotated.png"
+                       alt="Flame graph calling out an Array of 32k things, referencing 1.9GiB of memory." %}
 
 [ruby_social]: https://ruby.social/@stevenharman/111791414166558864 "Me, asking questions on ruby.social"
 [reap]: https://github.com/oxidize-rb/reap "A tool for parsing Ruby heap dumps by analyzing the reference graph."
@@ -393,12 +378,8 @@ The error's backtrace pointed to the `uri` Gem (part of Ruby's standard library)
 Which sounded awfully familiar.
 A little more debugging and stepping through the Bugsnag and `ActiveSupport` code and We'd narrowed in on the problem(s).
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/puts-debugging-before.png"
-       alt="Logs showing a Event object left on the stack after the error is raised"
-       title="Logs showing a Event object left on the stack after the error is raised">
-  <figcaption class="text-center">Logs showing a Event object left on the stack after the error is raised</figcaption>
-</figure>
+{% include figure.html src="memory_leak/puts-debugging-before.png"
+                       alt="Logs showing a Event object left on the stack after the error is raised." %}
 
 [bugsnag_L45]: https://github.com/bugsnag/bugsnag-ruby/blob/v6.26.1/lib/bugsnag/integrations/railtie.rb#L45
 
@@ -433,12 +414,8 @@ As luck would have it, just days prior [Bugsnag had fixed][bugsnag_pr_811] the `
 Our fix, in the short term, was to upgrade the Bugsnag Gem to a version that included the "don't raise an error while trying to clean an invalid URI" change.
 Longer term we're upgrading Rails versions.
 
-<figure>
-  <img src="/assets/images/posts/memory_leak/puts-debugging-after.png"
-       alt="Upgraded dependency no longer raises, and now the stack is empty"
-       title="Upgraded dependency no longer raises, and now the stack is empty">
-  <figcaption class="text-center">Upgraded dependency no longer raises, and now the stack is empty</figcaption>
-</figure>
+{% include figure.html src="memory_leak/puts-debugging-after.png"
+                       alt="Upgraded dependency no longer raises, and now the stack is empty." %}
 
 [bugsnag_pr_811]: https://github.com/bugsnag/bugsnag-ruby/pull/811
 
