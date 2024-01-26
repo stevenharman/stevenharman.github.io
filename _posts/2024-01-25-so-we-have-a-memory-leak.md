@@ -156,14 +156,14 @@ This helps prevent silly typos and much face-into-keyboard-ing later on.
 export DUMP_PID=<pid>
 # Turn on allocation tracking in the Ruby process.
 # This will impact performance; it can use a lot of memory and CPU
-rbtrace -p "${DUMP_PID}" -e "Thread.new{require 'objspace';ObjectSpace.trace_object_allocations_start}.join"
+rbtrace --pid="${DUMP_PID}" --eval="Thread.new{require 'objspace';ObjectSpace.trace_object_allocations_start}.join"
 ```
 
 ### Step 3: Dump the heap {#step-3-dump-the-heap}
 
 ```bash
 # Generate the first heap dump
-rbtrace -p "${DUMP_PID}" -e "Thread.new{require 'objspace'; GC.start(); io=File.open('/tmp/heap-${DUMP_PID}.json', 'w'); ObjectSpace.dump_all(output: io); io.close}.join" --timeout=600
+rbtrace --pid="${DUMP_PID}" --eval="Thread.new{require 'objspace'; GC.start(); io=File.open('/tmp/heap-${DUMP_PID}.json', 'w'); ObjectSpace.dump_all(output: io); io.close}.join" --timeout=600
 ```
 
 The `.json` file can be quite large.
@@ -200,7 +200,7 @@ Be sure to turn off the allocation tracking, and probably remove those dumps fro
 Or just restart the Dyno.
 
 ```bash
-rbtrace -p "${DUMP_PID}" -e "Thread.new{GC.start;require 'objspace';ObjectSpace.trace_object_allocations_stop;ObjectSpace.trace_object_allocations_clear}.join"
+rbtrace --pid="${DUMP_PID}" --eval="Thread.new{GC.start;require 'objspace';ObjectSpace.trace_object_allocations_stop;ObjectSpace.trace_object_allocations_clear}.join"
 ```
 
 [heroku_ps_exec]: https://devcenter.heroku.com/articles/exec "Heroku Exec (SSH Tunneling)"
