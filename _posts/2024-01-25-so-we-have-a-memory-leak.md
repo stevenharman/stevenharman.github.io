@@ -308,7 +308,7 @@ Sure enough, the huge `Array` is a list of "children" `Event` objects.
 This first child `Event` was for a `redirect_to.action_controller` event name.
 And it would have been pushed onto this `Event#children` list because some [other `Event` was already on the `event_stack`][rails_L138].
 
-At this point our intuition was telling me something was wrong here - these `Event`s were incorrectly being put on this `#children` `Array`.
+At this point our intuition was telling us something was wrong here - these `Event`s were incorrectly being put on this `#children` `Array`.
 We wanted to know what else that child `Event` had to tell us, like what is in that `Hash` it's holding a reference to?
 
 ```ruby
