@@ -149,11 +149,11 @@ Picking the process with the most memory (i.e., the leakiest of them) we use its
 
 ### Step 2: Enable memory allocation tracing {#step-2-enable-tracing}
 
-We `export` that worker process ID as `$DUMP_PID` to be used as a variable in later steps.
-This helps prevent silly typos and much face-into-keyboard-ing later on.
+We set that worker process ID as `$DUMP_PID` to be used as a variable in later steps.
+This helps prevent silly typos and much face-into-keyboard-ing later on. 🤦
 
 ```bash
-export DUMP_PID=<pid>
+DUMP_PID=<pid>
 # Turn on allocation tracking in the Ruby process.
 # This will impact performance; it can use a lot of memory and CPU
 rbtrace --pid="${DUMP_PID}" --eval="Thread.new{require 'objspace';ObjectSpace.trace_object_allocations_start}.join"
