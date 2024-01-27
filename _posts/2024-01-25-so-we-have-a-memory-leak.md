@@ -251,8 +251,8 @@ It will take a while to parse these dumps, which were pushing 6GiB in our case. 
 ~/code/jhawthorn/sheap/bin/sheap heap-<pid>-1.json heap-<pid>-2.json
 ```
 
-Opens us into an <abbr title="Interactive Ruby">IRB</abbr> console where we can explore the dumps and the diff between them.
-See the `README` (and the source code) for all that it can do.
+That opens an <abbr title="Interactive Ruby">IRB</abbr> console where we can explore the dumps and the diff between them.
+See the [`README`][sheap_readme] (and the source code) for all that it can do.
 
 ```ruby
 irb: t = $after.at("0x55adecb68498")
@@ -263,10 +263,11 @@ irb: $after.find_path(t)
 
 We first investigated that `Thread` to understand where it was coming from.
 Our suspicion was that it was a background thread from one of our telemetry or metrics tools - maybe the <abbr title="OpenTelemetry">OTel</abbr> tracer, or error reporter, or something like that?
-But, `sheap` told us it was a Puma thread - the one actually working requests, meaning it's "the Rails thread." So that question is answered.
+But, `sheap` told us it was a Puma thread - the one actually working requests, meaning it's "the Rails thread."
+So that question is answered.
 
 Next we wanted to know more about that `ActiveSupport::SubscriberQueueRegistry` object.
-We went looking at the stable branch for the version of Rails we're currently on (6.1) and found that [it's basically per-`Thread` `Hash` used to store lists of `ActiveSupport::Subscriber` instances][rails_L155], based on the event name.
+We went looking at the stable branch for the version of Rails we're currently on (6.1) and found that [it's basically a per-`Thread` `Hash` used to store lists of `ActiveSupport::Subscriber` instances][rails_L155], based on the event name.
 And `ActiveSupport::Notifications::Event` objects are pushed onto and popped off that per-thread, per-event-name list (`Array`) as `ActiveSupport::Notifications.instrument` blocks are run.
 Going back to `sheap` we can see that in action - the `SubscriberQueueRegistry` instance holds a reference to a `Hash`, which has references to some `String` and `Array` objects.
 
@@ -355,6 +356,7 @@ What especially stood out was the `password=[FILTERED]` , which means something 
 [rails_L64]: https://github.com/rails/rails/blob/517ff4b7c6c6aeaa588993475277d816b0ba038e/activesupport/lib/active_support/notifications/instrumenter.rb#L64
 [rails_L138]: https://github.com/rails/rails/blob/517ff4b7c6c6aeaa588993475277d816b0ba038e/activesupport/lib/active_support/subscriber.rb#L138-L139
 [rails_L155]: https://github.com/rails/rails/blob/517ff4b7c6c6aeaa588993475277d816b0ba038e/activesupport/lib/active_support/subscriber.rb#L155
+[sheap_readme]: https://github.com/jhawthorn/sheap/blob/main/README.md "Sheap is a library for interactively exploring Ruby Heap dumps"
 
 ## 🔄 Reproduce it {#reproduce-it}
 
