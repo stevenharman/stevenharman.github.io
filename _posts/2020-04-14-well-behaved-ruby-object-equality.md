@@ -40,7 +40,7 @@ class Message
   alias == eql?
 
   def hash
-    body.hash ^ subject.hash
+    [self.class, body, subject].hash
   end
 end
 ```
@@ -100,12 +100,12 @@ From the [Ruby docs][object-hash-docs]:
 By default, objects inherit their `hash` and `eql?` methods from `Object`, which compares the object identity, similar to `equal?`.
 As you might guess, we don't want that for our object.
 
-For `hash`, we can lean on the internals already having their own `hash` values, and combine them.
-We can use the exclusive-or operator (`^`) to take two other hashes (numbers) and smash them together in a consistent manner.
+For `hash`, we can lean on Ruby already knowing how to calculate the `hash` code for an `Array` of values.
+We'll use all of the values composing the identity of the object itself.
 
 ```ruby
 def hash
-  topic.hash ^ body.hash
+  [self.class, body, subject].hash
 end
 ```
 
