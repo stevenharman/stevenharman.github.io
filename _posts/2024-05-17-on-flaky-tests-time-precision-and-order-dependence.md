@@ -156,8 +156,12 @@ Consider this terribly made up example:
 ```ruby
 let!(:post) { FactoryBot.create(:post, :published) }
 
-context "with a draft post", :time_frozen do
+context "with a draft post" do
   let(:draft) { FactoryBot.create(:post, :draft) }
+
+  before do
+    freeze_time
+  end
 
   it "includes a published draft as the newest Post" do
     draft.publish! #=> sets published_at = Time.now
@@ -177,6 +181,26 @@ Since we know the creation and publication of the `draft` happens after the crea
 Except frozen time has no sub-second precision.
 So it's possible that the`draft`'s `published_at = 2024-05-20 0:0:0.000000 +0000`.
 Which is a fraction of a second _before_ the `post`'s, rather than after it.
+
+We might try reaching for our `:time_frozen` RSpec helper here, relying on RSpec's behavior to ensure all `before` blocks (which include `let!`) run before the actual test code (`it` block).
+And indeed that is the case.
+But this is also subtly broken as now all of the times lack sub-second precision.
+Meaning we're back in the non-deterministic ordering problem.
+
+```ruby
+let!(:post) { FactoryBot.create(:post, :published) }
+
+context "with a draft post", :time_frozen do
+  let(:draft) { FactoryBot.create(:post, :draft) }
+
+  it "includes a published draft as the newest Post" do
+    draft.publish! #=> sets published_at = Time.now
+    recent_posts = RecentPostsQuery.call
+
+    expect(recent_posts).to eq([draft, post]) #=> Flakes b/c time's can be equal
+  end
+end
+```
 
 The solution, like before, is to be explicit about time values when ordering based on them is important to the test.
 
