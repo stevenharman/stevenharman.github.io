@@ -3,7 +3,7 @@ layout: post
 title: "A Handful of Git Workflows for the Agilist"
 date: 2010-08-12 12:44
 comments: false
-categories:
+tags: [git]
 ---
 A few months back I gave [little talk][1] on the darling <acronym
 title="Source Control Management">SCM</acronym> tool of the Open Source

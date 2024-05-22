@@ -3,7 +3,7 @@ layout: post
 title: "Sensible Testing is About Sensible Design"
 date: 2012-06-29 10:16
 comments: true
-categories:
+tags: [testing, design]
 ---
 
 If you've not yet seen [Justin Leitgeb's][justin] GoGaRuCo talk, [Sensible Testing][sensible-testing], go check out the slides.

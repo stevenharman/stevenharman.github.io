@@ -3,7 +3,7 @@ layout: post
 title: "Another Git Repository Visualization, Just for Fun."
 date: 2011-07-01 21:46
 comments: false
-categories:
+tags: [git]
 ---
 
 I’ve created visualizations for Git repositories before – the one tracked a [product from its first commit through launch][gain-new-insights]. And while I still think there is some information and insight to be gleaned from such visualizations, the real reason I like to make them is... I think they're neat.

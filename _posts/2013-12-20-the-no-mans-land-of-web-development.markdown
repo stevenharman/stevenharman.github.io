@@ -3,7 +3,7 @@ layout: post
 title: "The No Man's Land of Web Development"
 date: 2013-12-20 14:23
 comments: true
-categories:
+tags: [rails, javascript]
 ---
 I think about the current state of web development experiences as a continuum.
 On one end we have *traditional* Rails-era web apps - full page loads, with

@@ -3,7 +3,7 @@ layout: post
 title: "From Testing to Test-First to Test-Driven"
 date: 2012-05-08 11:16
 comments: true
-categories:
+tags: [testing, design]
 ---
 
 When I started writing tests, around 2005, I was stoked just to have the tests.

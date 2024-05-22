@@ -3,7 +3,7 @@ layout: post
 title: "Prefer Dependency Injection to Service Location"
 date: 2009-09-25 14:17
 comments: true
-categories:
+tags: [design, testing]
 ---
 There is currently a thread running over in the StructureMap Users mailing list asking [if we really need constructor injection][1] when using an Inversion of Control container. Before any one rips off on a rant let me say that I worked with <a title="JonKruger.com" href="http://www.jonkruger.com/" rel="friend met co-worker">Jon</a> in my former life and I'm fairly certain he's merely conducting a thought experiment, trying to sure up his own beliefs. A worthwhile exercise, if you ask me.
 

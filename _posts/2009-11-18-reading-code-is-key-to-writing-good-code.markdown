@@ -3,7 +3,7 @@ layout: post
 title: "Reading Code is Key to Writing Good Code"
 date: 2009-11-18 14:06
 comments: true
-categories:
+tags: [design]
 ---
 As humans we seem to have an innate desire for structure in our lives. Structure permeates through our societies; it's found within our families, education systems, governments, etc. I suppose it's no surprise then that we also seek to *force* structure upon the work that we, as software developers, do.
 

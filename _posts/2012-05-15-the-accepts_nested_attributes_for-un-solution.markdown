@@ -3,7 +3,7 @@ layout: post
 title: "The accepts_nested_attributes_for Un-Solution"
 date: 2012-05-15 21:50
 comments: true
-categories:
+tags: [rails, ruby]
 ---
 
 ![Merry-Go-Round](/assets/images/posts/merry-go-round.png){:class="img-thumbnail img-thumbnail--right"}

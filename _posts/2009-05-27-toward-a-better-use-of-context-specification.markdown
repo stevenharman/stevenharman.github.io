@@ -3,11 +3,11 @@ layout: post
 title: "Toward a Better Use of Context/Specification"
 date: 2009-05-27 06:42
 comments: false
-categories:
+tags: [design]
 ---
 
-If you’ve hand-rolled your own **Context/Specification** apparatus to
-support your ~~test~~ spec-first lifestyle, you’ve likely got a base
+If you've hand-rolled your own **Context/Specification** apparatus to
+support your ~~test~~ spec-first lifestyle, you've likely got a base
 class that looks something like the following:
 
 ```csharp

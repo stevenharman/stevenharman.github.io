@@ -3,7 +3,7 @@ layout: post
 title: "Bag of Methods Module and Grep-driven Development"
 date: 2012-10-02 10:34
 comments: true
-categories:
+tags: [design]
 ---
 Always looking for more concise ways to express ideas, I'd like to present two
 terms for your consideration.

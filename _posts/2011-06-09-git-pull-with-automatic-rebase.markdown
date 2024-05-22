@@ -3,7 +3,7 @@ layout: post
 title: "Git Pull with Automatic Rebase"
 date: 2011-06-09 22:57
 comments: true
-categories:
+tags: [git]
 ---
 
 To rebase, or not to rebase - for me its not really a question. I

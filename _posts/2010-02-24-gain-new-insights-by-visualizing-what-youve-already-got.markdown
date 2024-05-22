@@ -3,7 +3,7 @@ layout: post
 title: "Gain New Insights by Visualizing What You’ve Already Got"
 date: 2010-02-24 22:32
 comments: false
-categories:
+tags: [git]
 ---
 
 I don’t know about you, but I like pretty things. Things that engage me. Shiny things. I enjoy seeing <em>the same old thing</em> in new and interesting ways. I suppose I’m just a visual kinda’ person.
