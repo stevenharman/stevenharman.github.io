@@ -84,7 +84,13 @@ defaults:
 url: "https://stevenharman.net"
 baseurl: ""
 
-# Includes
+# Extra directories and files to exclude from conversion
+exclude:
+  - bin
+  - docs
+  - psd
+  - README.md
+# Include directories and files in the conversion
 include: ["_pages"]
 
 # Outputting

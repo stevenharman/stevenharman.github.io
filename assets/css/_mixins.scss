@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin media-query($device) {
   @media screen and (max-width: $device), screen and (max-device-width: $device) {
     @content;
@@ -92,7 +94,7 @@
 }
 
 @function strip-unit($value) {
-  @return ($value / ($value * 0 + 1));
+  @return math.div($value, $value * 0 + 1);
 }
 
 // Fluid Typography - scale font-size using media queries between the min and

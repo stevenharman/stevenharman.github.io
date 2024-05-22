@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
-gem "jekyll", "~> 3.9"
+gem "jekyll", "~> 4.3"
 gem "webrick" # Needed to serve the gem locally
 
 group :jekyll_plugins do
