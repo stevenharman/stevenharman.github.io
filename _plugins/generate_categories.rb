@@ -46,8 +46,8 @@
 module Jekyll
 
     # make sure this is the same as baseurl in _config.yaml
-    BASEURL =  Jekyll.configuration({})['baseurl']
-    BASEURL = "" if (BASEURL == nil) else BASEURL
+    BASEURL =  Jekyll.configuration({})['baseurl'] || ""
+    # BASEURL = "" if (BASEURL == nil) else BASEURL
 
   # The CategoryIndex class creates a single category page for the specified category.
   class CategoryIndex < Page
