@@ -179,12 +179,12 @@
   }
 
   .search {
-    @include placeholder($grey-color-lighter, italic);
     background: $white;
     border: 1px solid $grey-color-lightest;
     box-shadow: 0 2px 3px rgba($black,.05), inset 6px 0 0 $grey-color-lightest;
     margin: 0 0 20px;
     position: relative;
+    @include placeholder($grey-color-lighter, italic);
 
     & > div {
       @include flexbox();
