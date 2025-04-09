@@ -6,6 +6,7 @@ ruby "3.2.8"
 
 gem "jekyll", "~> 4.3"
 gem "webrick" # Needed to serve the gem locally
+gem "faraday-retry"
 
 group :jekyll_plugins do
   # gem "github-pages"
