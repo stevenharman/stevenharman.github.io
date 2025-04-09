@@ -1,17 +1,20 @@
-@include media-query($on-tablet) {
+@use "mixins";
+@use "vars";
+
+@include mixins.media-query(vars.$on-tablet) {
 
   body { box-shadow: none; }
 
   .wrapper {
-    @include transition(padding .3s ease-in-out);
+    @include mixins.transition(padding .3s ease-in-out);
     padding: 120px 20px 50px;
 
     &.active { padding: 30px 20px; }
   }
 
   .user-profile {
-    background: $white;
-    box-shadow: 0 0 30px rgba($black, .15);
+    background: vars.$white;
+    box-shadow: 0 0 30px rgba(vars.$black, .15);
     height: 100%;
     margin: 0;
     padding: 40px 30px 30px;
@@ -40,10 +43,10 @@
     }
 
     .compact-header {
-      @include flexbox();
-      @include align-items();
-      background: $white;
-      box-shadow: 0 2px 10px rgba($black, .1), 0 -5px 0 $primary-color;
+      @include mixins.flexbox();
+      @include mixins.align-items();
+      background: vars.$white;
+      box-shadow: 0 2px 10px rgba(vars.$black, .1), 0 -5px 0 vars.$primary-color;
       left: 0;
       padding: 20px;
       position: fixed;
@@ -107,13 +110,13 @@
   }
 }
 
-@include media-query($on-smaller-tablets) {
+@include mixins.media-query(vars.$on-smaller-tablets) {
   .the-content .post {
     padding: 1rem 0.5rem 4rem;
 
     .post-content {
       .heading-marker {
-        @include transform-none();
+        @include mixins.transform-none();
         font-size: inherit;
         left: auto;
         margin: 0 0 0 10px;
@@ -132,7 +135,7 @@
   }
 }
 
-@include media-query($on-phone) {
+@include mixins.media-query(vars.$on-phone) {
   .wrapper {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -141,7 +144,7 @@
   .the-content {
     .search > div .search-holder { width: 45%; }
     .post .post-footer div.tags {
-      border-top: 1px solid $grey-color-lightest;
+      border-top: 1px solid vars.$grey-color-lightest;
       position: static;
       text-align: left;
     }

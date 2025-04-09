@@ -1,5 +1,8 @@
+@use "mixins";
+@use "vars";
+
 .img-fluid {
-  @include img-fluid;
+  @include mixins.img-fluid;
 }
 
 .img-thumbnail--left {
@@ -18,16 +21,16 @@
 }
 
 .img-thumbnail {
-  background-color: $thumbnail-bg;
-  border-radius: $thumbnail-border-radius;
-  border: $thumbnail-border-width solid $thumbnail-border-color;
+  background-color: vars.$thumbnail-bg;
+  border-radius: vars.$thumbnail-border-radius;
+  border: vars.$thumbnail-border-width solid vars.$thumbnail-border-color;
   display: block;
-  padding: $thumbnail-padding;
+  padding: vars.$thumbnail-padding;
 
   // Keep them at most 100% wide
-  @include img-fluid;
+  @include mixins.img-fluid;
 
-  @include media-query($on-phone) {
+  @include mixins.media-query(vars.$on-phone) {
     float: none;
     margin-left: auto;
     margin-right: auto;

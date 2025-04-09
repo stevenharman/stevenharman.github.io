@@ -1,5 +1,7 @@
+@use "vars";
+
 div.highlight {
-  border: 1px solid $grey-color-lightest;
+  border: 1px solid vars.$grey-color-lightest;
   padding: 0.5rem;
 }
 
