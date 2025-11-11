@@ -57,8 +57,8 @@ Host github.com
 ```
 
 This configuration will work for `git` talking to GitHub for the `fry` Account, because it is matched first.
-But when working with a repository for the `fry_plnx` Account, the same first `Host github.com` entry matches, and uses the `id_fry_ed25519` SSH Key.
-But the `fry_plnx` Account doesn't know about that key, and so… we see errors.
+But when working with a repository for the `fry_plnx` Account, the first `Host github.com` entry matches, and uses the `id_fry_ed25519` SSH Key.
+However, that key is not associated with the `fry_plnx` Account on GitHub and so… we see errors.
 
 ```console
 $ git clone git@github.com:planet-express/delivery_service.git
@@ -74,7 +74,7 @@ $ git clone git@github.com:planet-express/delivery_service.git
 
 ## 🤡 Use Different `Host` values
 
-At this point, most articles on the Internet will tell us to [override the SSH command used][gh_multi] to connect, or (IMO, slightly better) [use different `Host` values][1p_multi] for each.
+At this point, most articles on the Internet will tell us to [override the SSH command used][gh_multi] to connect, or (<abbr title="In My Opinion">IMO</abbr>, slightly better) [use different `Host` values][1p_multi] for each.
 The later would look something like this:
 
 ```
@@ -112,7 +112,7 @@ And I detest toil.
 ## 🤖 Automate Substituting the `Host`
 
 I happened [across an article][kenmuse] using [Git's `url.<base>.insteadOf` variable][insteadof] to swap URLs.
-We can use that to teach Git about our `Host github-plnx`, and have it auto-magically swap `github.com` back in when talking over SSH to GitHub.
+We can use that to teach Git about our `Host github-plnx` entry, and have it auto-magically swap `github.com` back in when talking over SSH to GitHub.
 We'll add this to our `~/.gitconfig`:
 
 ```
@@ -136,25 +136,25 @@ _NOTE: We'd need to add a similar entry for other Organizations in the GitHub En
 
 ### 🧹 Keeping `.gitconfig` Clean
 
-If you've [got your dotfiles in Git][dotfiles], you might want to keep employer and/or machine-specific configuration out of your `~/.gitconfig`.
+If you've [got your dotfiles in Git][dotfiles], you might want to keep employer and/or machine-specific configuration out of the `~/.gitconfig` file.
 For example, our work machine needs to know about the custom `url "github-plnx:planet-express"` Git config, but our personal MacBook likely doesn't!
-Or maybe we don't, or cannot, expose every GitHub Enterprise Cloud Organizations we're a part of.
+Or maybe we don't want to, or cannot, expose every GitHub Enterprise Cloud Organizations we're a part of in our dotfiles repo.
 
 Luckily, we can leverage [Git's ability to `include` other config files][git_includes] to keep such customizations out of Git.
-We can adjust our `~/.gitconfig`, which is in our dotfiles Git repo, to include another config file which is _NOT_ in Git.
-Add the following the bottom of our `~/.gitconfig`:
+We can adjust the `~/.gitconfig` file, which is in our dotfiles Git repo, to include another config file which is _NOT_ in Git.
+Add the following to the bottom of the `~/.gitconfig` file:
 
 ```
 [include]
   path = ~/.gitconfig_custom
 ```
 
-If this file isn't present, Git just ignores it.
+If this the `!/.gitconfig_custom` file isn't present, Git just ignores the include directive.
 As is the case on my personal MacBook.
 😅 Phew!
 
 When it is present, Git will load the file, allowing us to override or add additional configuration.
-Now we move our `[url …]` configuration from `~/.gitconfig` into the new `~/.gitconfig_custom` file:
+Now, move the `[url …]` configuration from `~/.gitconfig` into the new `~/.gitconfig_custom` file:
 
 ```
 [url "github-plnx:planet-express"]
