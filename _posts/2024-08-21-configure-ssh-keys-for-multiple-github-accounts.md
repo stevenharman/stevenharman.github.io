@@ -149,7 +149,7 @@ Add the following to the bottom of the `~/.gitconfig` file:
   path = ~/.gitconfig_custom
 ```
 
-If this the `!/.gitconfig_custom` file isn't present, Git just ignores the include directive.
+If the `~/.gitconfig_custom` file isn't present, Git just ignores the include directive.
 As is the case on my personal MacBook.
 😅 Phew!
 
